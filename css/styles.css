@@ -10913,6 +10913,32 @@ section {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+.community-link {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  background: #f8f9fa;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.community-link:hover {
+  background: #e9ecef;
+  transform: translateX(4px);
+  color: inherit;
+}
+.community-link .community-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
