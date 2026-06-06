@@ -44,23 +44,23 @@ Built for **roommates, couples, and families** who want less friction and more h
 
 ### Light Theme
 
-| Home | Ledger | Shopping |
+| Home | Shopping | Ledger |
 |:---:|:---:|:---:|
-| <img src="assets/img/screenshots/light_01_home.png" width="250"> | <img src="assets/img/screenshots/light_02_ledger.png" width="250"> | <img src="assets/img/screenshots/light_03_shopping.png" width="250"> |
+| <img src="assets/img/screenshots/light_01_home.png" width="250"> | <img src="assets/img/screenshots/light_02_shopping.png" width="250"> | <img src="assets/img/screenshots/light_03_ledger.png" width="250"> |
 
-| Chores | Details | Renegotiate |
+| Chores | The Hub | Settings |
 |:---:|:---:|:---:|
-| <img src="assets/img/screenshots/light_04_chores_list.png" width="250"> | <img src="assets/img/screenshots/light_05_chore_details.png" width="250"> | <img src="assets/img/screenshots/light_06_chore_negotiate.png" width="250"> |
+| <img src="assets/img/screenshots/light_05_chores_list.png" width="250"> | <img src="assets/img/screenshots/light_08_hub.png" width="250"> | <img src="assets/img/screenshots/light_10_settings.png" width="250"> |
 
 ### Dark Theme
 
-| Home | Ledger | Shopping |
+| Home | Shopping | Ledger |
 |:---:|:---:|:---:|
-| <img src="assets/img/screenshots/dark_01_home.png" width="250"> | <img src="assets/img/screenshots/dark_02_ledger.png" width="250"> | <img src="assets/img/screenshots/dark_03_shopping.png" width="250"> |
+| <img src="assets/img/screenshots/dark_01_home.png" width="250"> | <img src="assets/img/screenshots/dark_02_shopping.png" width="250"> | <img src="assets/img/screenshots/dark_03_ledger.png" width="250"> |
 
-| Chores | Details | Renegotiate |
+| Chores | The Hub | Settings |
 |:---:|:---:|:---:|
-| <img src="assets/img/screenshots/dark_04_chores_list.png" width="250"> | <img src="assets/img/screenshots/dark_05_chore_details.png" width="250"> | <img src="assets/img/screenshots/dark_06_chore_negotiate.png" width="250"> |
+| <img src="assets/img/screenshots/dark_05_chores_list.png" width="250"> | <img src="assets/img/screenshots/dark_08_hub.png" width="250"> | <img src="assets/img/screenshots/dark_10_settings.png" width="250"> |
 
 ## Join the Community
 
