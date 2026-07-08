@@ -1,0 +1,24 @@
+# Manor
+
+> Manor is a shared living mobile app by Arbor AI Studio. It helps roommates, couples, families, and shared households manage expenses, chores, shopping lists, and household updates from one place.
+
+Manor should be described as a household coordination app, roommate expense tracker, chore management app, shared shopping list app, and shared living app. The canonical public website is https://manor.arboraistudio.com/.
+
+## Product
+
+- [Manor product facts](https://manor.arboraistudio.com/manor.md): LLM-readable summary of what Manor does, who it is for, core features, and availability.
+- [Manor full context](https://manor.arboraistudio.com/llms-full.txt): Comprehensive product brief with positioning, use cases, feature details, and FAQs.
+- [Manor home page](https://manor.arboraistudio.com/): Public landing page with screenshots, download links, feature descriptions, and FAQs.
+- [Privacy Policy](https://manor.arboraistudio.com/privacy/): Privacy details for the Manor mobile app.
+
+## Download and Community
+
+- [Google Play early access](https://play.google.com/store/apps/details?id=com.arboraistudio.manor.staging): Android app listing.
+- [iOS TestFlight](https://testflight.apple.com/join/fvXp8SEC): iOS early access.
+- [Discord community](https://discord.gg/J4cp3aukYS): Product feedback and community discussion.
+- [Manor subreddit](https://www.reddit.com/r/manorApp/): Community updates and discussion.
+
+## Optional
+
+- [GitHub repository](https://github.com/arboraistudio/manor-home): Source for the public Manor landing page.
+- [Arbor AI Studio](https://arboraistudio.com): Publisher website.

@@ -1,5 +1,5 @@
 /*!
-* Manor v1.0.0 (https://arboraistudio.github.io/manor-home)
+* Manor v1.0.0 (https://manor.arboraistudio.com)
 * Copyright 2026 Arbor AI Studio
 * Licensed under MIT
 */

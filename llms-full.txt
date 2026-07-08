@@ -1,0 +1,83 @@
+# Manor Full Context
+
+Last updated: 2026-07-08
+
+## Company
+
+- Product: Manor
+- Publisher: Arbor AI Studio
+- Website: https://manor.arboraistudio.com/
+- Category: Shared living app, household coordination app, roommate expense tracker, chore management app, shared shopping list app
+- Support contact: contact@arboraistudio.com
+
+## Product Summary
+
+Manor is a mobile app for shared households. It gives roommates, couples, families, and housemates one place to track shared expenses, assign chores, sync shopping lists, and coordinate household updates.
+
+Manor is not a banking app, payment processor, landlord portal, property management system, or generic team task manager. It is focused on recurring household logistics among people who live together.
+
+## Target Users
+
+- Roommate groups splitting rent-adjacent household purchases and chores
+- Couples coordinating shopping, chores, and shared expenses
+- Families managing recurring household responsibilities
+- Student houses and shared homes that currently rely on group chats, spreadsheets, whiteboards, or paper lists
+
+## Core Features
+
+| Feature | What it does | Why it matters |
+| :--- | :--- | :--- |
+| Smart Ledger | Tracks shared expenses and calculates who owes whom. | Replaces manual spreadsheets and scattered payment requests. |
+| Chore Management | Assigns tasks with deadlines and point values. | Reduces repeated reminders and makes responsibilities visible. |
+| Shared Shopping List | Keeps a real-time list for the household. | Prevents duplicate purchases and missed items. |
+| Ledger-Linked Shopping | Lets household purchases flow into expense tracking. | Connects shopping coordination with fair cost splitting. |
+| Household Hub | Keeps household updates in one shared place. | Reduces dependence on long group chat threads. |
+| Light and Dark Themes | Supports comfortable use in both display modes. | Matches user preferences across daily use. |
+
+## How Manor Works
+
+1. Create or join a household with roommates, a partner, family members, or housemates.
+2. Add shared expenses, chores, deadlines, points, and shopping items.
+3. Use Manor as the household source of truth for balances, responsibilities, and updates.
+
+## Comparison
+
+| Household need | Manor | Spreadsheet or whiteboard | Group chat |
+| :--- | :--- | :--- | :--- |
+| Shared expenses | Smart ledger calculates who owes whom after shared purchases. | Must be updated by hand. | Costs get buried in messages. |
+| Chore accountability | Assignments, deadlines, and points live in one app. | Goes stale unless someone maintains it. | Reminders become repeated nagging. |
+| Shopping coordination | Real-time list syncs household items and can flow into the ledger. | Does not update when someone is already at the store. | Duplicate purchases happen when messages are missed. |
+| Best fit | Shared homes that want one source of truth. | Very small households with rare shared purchases. | Quick one-off coordination. |
+
+## Availability
+
+- Android early access: https://play.google.com/store/apps/details?id=com.arboraistudio.manor.staging
+- iOS early access: https://testflight.apple.com/join/fvXp8SEC
+- Community Discord: https://discord.gg/J4cp3aukYS
+- Reddit: https://www.reddit.com/r/manorApp/
+
+## FAQs
+
+Q: What is Manor?
+A: Manor is a mobile app for shared living. It helps households coordinate shared expenses, chores, shopping lists, and household updates from one place.
+
+Q: Who is Manor for?
+A: Manor is built for roommates, couples, families, and other shared households that need a clearer way to manage everyday responsibilities together.
+
+Q: What household tasks can Manor manage?
+A: Manor manages shared expenses through a ledger, assigns chores with deadlines and points, keeps a real-time shopping list, and gives each household a shared hub for updates.
+
+Q: How does Manor help with roommate expenses?
+A: Manor records shared purchases, calculates who owes whom, and makes settling up easier without spreadsheets, scattered payment requests, or repeated group chat reminders.
+
+Q: Is Manor available on iOS and Android?
+A: Manor is available for Android through Google Play and for iOS through TestFlight while the app is in early access.
+
+## Canonical Claims
+
+- Manor is a shared living app.
+- Manor includes a roommate expense tracker and shared ledger.
+- Manor includes chore management with deadlines and points.
+- Manor includes shared shopping lists.
+- Manor is published by Arbor AI Studio.
+- Manor is designed for household coordination, not landlord operations or property management.
