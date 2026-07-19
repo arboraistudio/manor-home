@@ -6,6 +6,7 @@
         <meta name="description" content="Privacy Policy for Manor, the shared living app from Arbor AI Studio for household expenses, chores, shopping lists, and household updates." />
         <meta name="author" content="Arbor AI Studio" />
         <meta name="robots" content="index, follow, max-snippet:-1" />
+        <meta property="article:modified_time" content="2026-05-20" />
         <title>Privacy Policy - Manor Shared Living App</title>
         <link rel="canonical" href="https://manor.arboraistudio.com/privacy/" />
         <meta property="og:locale" content="en_US" />
@@ -50,6 +51,17 @@
                 dataLayer.push(arguments);
             }
             gtag('js', new Date());
+            // Segment AI-agent-referred traffic (ChatGPT, Perplexity, Claude, Gemini, Copilot)
+            // so agent referrals can be measured separately from organic search in GA4.
+            var aiReferrers = ['chatgpt.com', 'chat.openai.com', 'perplexity.ai', 'claude.ai', 'gemini.google.com', 'copilot.microsoft.com'];
+            var trafficSourceType = aiReferrers.some(function (host) {
+                return document.referrer.indexOf(host) !== -1;
+            })
+                ? 'ai_agent'
+                : 'organic';
+            gtag('set', 'user_properties', {
+                traffic_source_type: trafficSourceType,
+            });
             gtag('config', 'G-02DD9RN6KQ');
         </script>
     </head>
@@ -72,117 +84,119 @@
                 </div>
             </div>
         </nav>
-        <!-- Privacy Policy Content-->
-        <section style="padding-top: 8rem">
-            <div class="container px-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <h1 class="display-4 mb-2">Privacy Policy</h1>
-                        <p class="lead text-muted mb-5">
-                            <strong>Last Updated:</strong>
-                            May 20, 2026
-                        </p>
-                        <h2 class="mt-5 mb-3">1. Introduction</h2>
-                        <p>Manor ("we," "our," or "us") is operated by Arbor AI Studio. This Privacy Policy explains how we collect, use, and safeguard your information when you use the Manor mobile application (the "App").</p>
-                        <p>By using the App, you agree to the collection and use of information in accordance with this policy.</p>
-                        <h2 class="mt-5 mb-3">2. Information We Collect</h2>
-                        <h3 class="mt-4 mb-2">2.1 Account Information</h3>
-                        <p>When you create an account, we collect your name, email address, and profile information. You may also sign in using Google Sign-In, which provides us with your Google account email and basic profile information.</p>
-                        <h3 class="mt-4 mb-2">2.2 App Content</h3>
-                        <p>We collect and store content you create within the App, including:</p>
-                        <ul>
-                            <li>Household information and member details</li>
-                            <li>Financial transactions and expenses (Ledger)</li>
-                            <li>Chore assignments, deadlines, and point values</li>
-                            <li>Shopping list items</li>
-                            <li>Messages and communications within your household</li>
-                        </ul>
-                        <h3 class="mt-4 mb-2">2.3 Automatically Collected Information</h3>
-                        <p>We use Firebase services to collect:</p>
-                        <ul>
-                            <li>
-                                <strong>Crash Data:</strong>
-                                Firebase Crashlytics collects crash reports and device state information to help us diagnose and fix issues.
-                            </li>
-                            <li>
-                                <strong>Performance Data:</strong>
-                                App startup times, network request latency, and other performance metrics.
-                            </li>
-                            <li>
-                                <strong>Installation ID:</strong>
-                                A unique anonymous identifier for push notifications (Firebase Cloud Messaging).
-                            </li>
-                        </ul>
-                        <h2 class="mt-5 mb-3">3. How We Use Your Information</h2>
-                        <p>We use your information to:</p>
-                        <ul>
-                            <li>Provide, maintain, and improve the App's core functionality</li>
-                            <li>Authenticate your identity and manage your account</li>
-                            <li>Enable collaboration between household members</li>
-                            <li>Send push notifications for chore reminders, settlement updates, and household activity</li>
-                            <li>Diagnose crashes and performance issues to improve app stability</li>
-                            <li>Communicate with you about updates, security alerts, and support</li>
-                        </ul>
-                        <h2 class="mt-5 mb-3">4. Third-Party Services</h2>
-                        <p>The App uses the following third-party services:</p>
-                        <ul>
-                            <li>
-                                <strong>Google Firebase</strong>
-                                (Crashlytics, Cloud Messaging) —
-                                <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a>
-                            </li>
-                            <li>
-                                <strong>Google Sign-In</strong>
-                                —
-                                <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>
-                            </li>
-                            <li>
-                                <strong>Expo</strong>
-                                (OTA Updates, Push Notifications) —
-                                <a href="https://expo.dev/privacy" target="_blank">Expo Privacy Policy</a>
-                            </li>
-                        </ul>
-                        <p>These third parties may collect information as described in their respective privacy policies. We do not control their data collection practices.</p>
-                        <h2 class="mt-5 mb-3">5. Data Storage and Security</h2>
-                        <p>Your data is stored on secure servers managed by our backend infrastructure. We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.</p>
-                        <h2 class="mt-5 mb-3">6. Data Retention</h2>
-                        <p>We retain your account information and app content for as long as your account is active. Crash and performance data may be retained in aggregate form for analytical purposes.</p>
-                        <h2 class="mt-5 mb-3">7. Account Deletion</h2>
-                        <p>
-                            You can request deletion of your Manor account and all associated data at any time. To do so, email us at
-                            <a href="mailto:contact@arboraistudio.com">contact@arboraistudio.com</a>
-                            with the subject line "Account Deletion Request" and include the email address associated with your Manor account.
-                        </p>
-                        <p>Upon receiving your request, we will:</p>
-                        <ul>
-                            <li>Delete your account, profile information (name, email, avatar), and authentication data within 30 days</li>
-                            <li>Delete all your household data including chores, expenses, shopping lists, and hub content</li>
-                            <li>Retain anonymized crash and performance analytics data (Firebase Crashlytics), which cannot be tied to your identity</li>
-                        </ul>
-                        <p>If you are a household admin, you must transfer or delete the household before your account can be removed.</p>
-                        <h2 class="mt-5 mb-3">8. Children's Privacy</h2>
-                        <p>The App is not intended for children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us so we can delete it.</p>
-                        <h2 class="mt-5 mb-3">9. Changes to This Policy</h2>
-                        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
-                        <h2 class="mt-5 mb-3">10. Contact Us</h2>
-                        <p>If you have questions about this Privacy Policy, contact us at:</p>
-                        <div class="card border-0 shadow-sm mt-3 mb-5">
-                            <div class="card-body p-4">
-                                <p class="mb-2"><strong>Arbor AI Studio</strong></p>
-                                <p class="mb-2">
-                                    <i class="bi-envelope me-2"></i>
-                                    <a href="mailto:contact@arboraistudio.com">contact@arboraistudio.com</a>
-                                </p>
-                                <p class="mb-0">
-                                    <i class="bi-globe me-2"></i>
-                                    <a href="https://arboraistudio.com" target="_blank">arboraistudio.com</a>
-                                </p>
+        <main>
+            <!-- Privacy Policy Content-->
+            <section style="padding-top: 8rem">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <h1 class="display-4 mb-2">Privacy Policy</h1>
+                            <p class="lead text-muted mb-5">
+                                <strong>Last Updated:</strong>
+                                May 20, 2026
+                            </p>
+                            <h2 class="mt-5 mb-3">1. Introduction</h2>
+                            <p>Manor ("we," "our," or "us") is operated by Arbor AI Studio. This Privacy Policy explains how we collect, use, and safeguard your information when you use the Manor mobile application (the "App").</p>
+                            <p>By using the App, you agree to the collection and use of information in accordance with this policy.</p>
+                            <h2 class="mt-5 mb-3">2. Information We Collect</h2>
+                            <h3 class="mt-4 mb-2">2.1 Account Information</h3>
+                            <p>When you create an account, we collect your name, email address, and profile information. You may also sign in using Google Sign-In, which provides us with your Google account email and basic profile information.</p>
+                            <h3 class="mt-4 mb-2">2.2 App Content</h3>
+                            <p>We collect and store content you create within the App, including:</p>
+                            <ul>
+                                <li>Household information and member details</li>
+                                <li>Financial transactions and expenses (Ledger)</li>
+                                <li>Chore assignments, deadlines, and point values</li>
+                                <li>Shopping list items</li>
+                                <li>Messages and communications within your household</li>
+                            </ul>
+                            <h3 class="mt-4 mb-2">2.3 Automatically Collected Information</h3>
+                            <p>We use Firebase services to collect:</p>
+                            <ul>
+                                <li>
+                                    <strong>Crash Data:</strong>
+                                    Firebase Crashlytics collects crash reports and device state information to help us diagnose and fix issues.
+                                </li>
+                                <li>
+                                    <strong>Performance Data:</strong>
+                                    App startup times, network request latency, and other performance metrics.
+                                </li>
+                                <li>
+                                    <strong>Installation ID:</strong>
+                                    A unique anonymous identifier for push notifications (Firebase Cloud Messaging).
+                                </li>
+                            </ul>
+                            <h2 class="mt-5 mb-3">3. How We Use Your Information</h2>
+                            <p>We use your information to:</p>
+                            <ul>
+                                <li>Provide, maintain, and improve the App's core functionality</li>
+                                <li>Authenticate your identity and manage your account</li>
+                                <li>Enable collaboration between household members</li>
+                                <li>Send push notifications for chore reminders, settlement updates, and household activity</li>
+                                <li>Diagnose crashes and performance issues to improve app stability</li>
+                                <li>Communicate with you about updates, security alerts, and support</li>
+                            </ul>
+                            <h2 class="mt-5 mb-3">4. Third-Party Services</h2>
+                            <p>The App uses the following third-party services:</p>
+                            <ul>
+                                <li>
+                                    <strong>Google Firebase</strong>
+                                    (Crashlytics, Cloud Messaging) —
+                                    <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <strong>Google Sign-In</strong>
+                                    —
+                                    <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <strong>Expo</strong>
+                                    (OTA Updates, Push Notifications) —
+                                    <a href="https://expo.dev/privacy" target="_blank">Expo Privacy Policy</a>
+                                </li>
+                            </ul>
+                            <p>These third parties may collect information as described in their respective privacy policies. We do not control their data collection practices.</p>
+                            <h2 class="mt-5 mb-3">5. Data Storage and Security</h2>
+                            <p>Your data is stored on secure servers managed by our backend infrastructure. We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.</p>
+                            <h2 class="mt-5 mb-3">6. Data Retention</h2>
+                            <p>We retain your account information and app content for as long as your account is active. Crash and performance data may be retained in aggregate form for analytical purposes.</p>
+                            <h2 class="mt-5 mb-3">7. Account Deletion</h2>
+                            <p>
+                                You can request deletion of your Manor account and all associated data at any time. To do so, email us at
+                                <a href="mailto:contact@arboraistudio.com">contact@arboraistudio.com</a>
+                                with the subject line "Account Deletion Request" and include the email address associated with your Manor account.
+                            </p>
+                            <p>Upon receiving your request, we will:</p>
+                            <ul>
+                                <li>Delete your account, profile information (name, email, avatar), and authentication data within 30 days</li>
+                                <li>Delete all your household data including chores, expenses, shopping lists, and hub content</li>
+                                <li>Retain anonymized crash and performance analytics data (Firebase Crashlytics), which cannot be tied to your identity</li>
+                            </ul>
+                            <p>If you are a household admin, you must transfer or delete the household before your account can be removed.</p>
+                            <h2 class="mt-5 mb-3">8. Children's Privacy</h2>
+                            <p>The App is not intended for children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us so we can delete it.</p>
+                            <h2 class="mt-5 mb-3">9. Changes to This Policy</h2>
+                            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+                            <h2 class="mt-5 mb-3">10. Contact Us</h2>
+                            <p>If you have questions about this Privacy Policy, contact us at:</p>
+                            <div class="card border-0 shadow-sm mt-3 mb-5">
+                                <div class="card-body p-4">
+                                    <p class="mb-2"><strong>Arbor AI Studio</strong></p>
+                                    <p class="mb-2">
+                                        <i class="bi-envelope me-2"></i>
+                                        <a href="mailto:contact@arboraistudio.com">contact@arboraistudio.com</a>
+                                    </p>
+                                    <p class="mb-0">
+                                        <i class="bi-globe me-2"></i>
+                                        <a href="https://arboraistudio.com" target="_blank">arboraistudio.com</a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
         <!-- Footer-->
         <footer class="bg-black text-center py-5">
             <div class="container px-5">

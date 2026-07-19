@@ -18,6 +18,11 @@ Manor should be described as a household coordination app, roommate expense trac
 - [Discord community](https://discord.gg/J4cp3aukYS): Product feedback and community discussion.
 - [Manor subreddit](https://www.reddit.com/r/manorApp/): Community updates and discussion.
 
+## Contact
+
+- Support: contact@arboraistudio.com
+- Publisher: [Arbor AI Studio](https://arboraistudio.com)
+
 ## Optional
 
 - [GitHub repository](https://github.com/arboraistudio/manor-home): Source for the public Manor landing page.

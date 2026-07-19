@@ -6,8 +6,13 @@
         <meta name="description" content="Manor is a shared living app for roommates, couples, and families. Track household expenses, assign chores, manage points and deadlines, and sync shopping lists in one place." />
         <meta name="author" content="Arbor AI Studio" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta property="article:modified_time" content="2026-07-08" />
         <title>Manor - Shared Living App for Roommates, Couples, and Families</title>
         <link rel="canonical" href="https://manor.arboraistudio.com/" />
+        <link rel="alternate" hreflang="en-US" href="https://manor.arboraistudio.com/" />
+        <link rel="alternate" hreflang="x-default" href="https://manor.arboraistudio.com/" />
+        <link rel="me" href="https://github.com/arboraistudio" />
+        <link rel="me" href="https://www.reddit.com/r/manorApp/" />
         <link rel="alternate" type="text/markdown" href="https://manor.arboraistudio.com/manor.md" title="Manor product facts for AI assistants" />
         <link rel="alternate" type="text/plain" href="https://manor.arboraistudio.com/llms-full.txt" title="Manor full product context for AI assistants" />
         <link rel="privacy-policy" href="https://manor.arboraistudio.com/privacy/" />
@@ -39,7 +44,7 @@
             {
                 "@context": "https://schema.org",
                 "@graph": [
-                    { "@type": "Organization", "@id": "https://manor.arboraistudio.com/#organization", "name": "Arbor AI Studio", "url": "https://arboraistudio.com", "sameAs": ["https://github.com/arboraistudio"] },
+                    { "@type": "Organization", "@id": "https://manor.arboraistudio.com/#organization", "name": "Arbor AI Studio", "url": "https://arboraistudio.com", "sameAs": ["https://github.com/arboraistudio"], "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@arboraistudio.com" }, "knowsAbout": ["shared living", "household coordination", "roommate expense tracking", "chore management", "shared shopping lists"] },
                     { "@type": "WebSite", "@id": "https://manor.arboraistudio.com/#website", "name": "Manor", "url": "https://manor.arboraistudio.com/", "description": "Manor is a shared living app for roommates, couples, and families. Track household expenses, assign chores, manage points and deadlines, and sync shopping lists in one place.", "inLanguage": "en-US", "publisher": { "@id": "https://manor.arboraistudio.com/#organization" } },
                     { "@type": "WebPage", "@id": "https://manor.arboraistudio.com/#webpage", "url": "https://manor.arboraistudio.com/", "name": "Manor - Shared Living App for Roommates, Couples, and Families", "description": "Manor is a shared living app for roommates, couples, and families. Track household expenses, assign chores, manage points and deadlines, and sync shopping lists in one place.", "dateModified": "2026-07-08", "isPartOf": { "@id": "https://manor.arboraistudio.com/#website" }, "about": { "@id": "https://manor.arboraistudio.com/#app" }, "primaryImageOfPage": { "@type": "ImageObject", "url": "https://manor.arboraistudio.com/assets/img/screenshots/light_01_home.png" }, "inLanguage": "en-US" },
                     {
@@ -102,6 +107,17 @@
                 dataLayer.push(arguments);
             }
             gtag('js', new Date());
+            // Segment AI-agent-referred traffic (ChatGPT, Perplexity, Claude, Gemini, Copilot)
+            // so agent referrals can be measured separately from organic search in GA4.
+            var aiReferrers = ['chatgpt.com', 'chat.openai.com', 'perplexity.ai', 'claude.ai', 'gemini.google.com', 'copilot.microsoft.com'];
+            var trafficSourceType = aiReferrers.some(function (host) {
+                return document.referrer.indexOf(host) !== -1;
+            })
+                ? 'ai_agent'
+                : 'organic';
+            gtag('set', 'user_properties', {
+                traffic_source_type: trafficSourceType,
+            });
             gtag('config', 'G-02DD9RN6KQ');
         </script>
     </head>
@@ -130,47 +146,49 @@
                 </div>
             </div>
         </nav>
-        <!-- Mashead header-->
-        <header class="masthead">
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-lg-6">
-                        <!-- Mashead text and app badges-->
-                        <div class="mb-5 mb-lg-0 text-center text-lg-start">
-                            <h1 class="display-1 lh-1 mb-3">Manage Shared Living</h1>
-                            <p class="lead fw-normal text-muted mb-5">Effortlessly track expenses, assign chores, and sync shopping lists — all in one beautiful app built for roommates, couples, and families.</p>
-                            <div class="d-flex flex-column flex-lg-row align-items-center">
-                                <a class="me-lg-3 mb-4 mb-lg-0" href="https://play.google.com/store/apps/details?id=com.arboraistudio.manor.staging" target="_blank" rel="noopener"><img class="app-badge" src="assets/img/google-play-badge.svg" alt="Get it on Google Play" /></a>
-                                <a href="https://testflight.apple.com/join/fvXp8SEC" target="_blank" rel="noopener"><img class="app-badge" src="assets/img/app-store-badge.svg" alt="Download on the App Store" /></a>
+        <main id="main-content">
+            <!-- Mashead header-->
+            <header class="masthead">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6">
+                            <!-- Mashead text and app badges-->
+                            <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                                <h1 class="display-1 lh-1 mb-3">Manage Shared Living</h1>
+                                <p class="lead fw-normal text-muted mb-5">Effortlessly track expenses, assign chores, and sync shopping lists — all in one beautiful app built for roommates, couples, and families.</p>
+                                <div class="d-flex flex-column flex-lg-row align-items-center">
+                                    <a class="me-lg-3 mb-4 mb-lg-0" href="https://play.google.com/store/apps/details?id=com.arboraistudio.manor.staging" target="_blank" rel="noopener"><img class="app-badge" src="assets/img/google-play-badge.svg" alt="Get it on Google Play" /></a>
+                                    <a href="https://testflight.apple.com/join/fvXp8SEC" target="_blank" rel="noopener"><img class="app-badge" src="assets/img/app-store-badge.svg" alt="Download on the App Store" /></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <!-- Masthead device mockup with screenshot carousel-->
-                        <div class="masthead-device-mockup">
-                            <svg class="circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="circleGradient" gradientTransform="rotate(45)">
-                                        <stop class="gradient-start-color" offset="0%"></stop>
-                                        <stop class="gradient-end-color" offset="100%"></stop>
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="50" cy="50" r="50"></circle></svg
-                            ><svg class="shape-1 d-none d-sm-block" viewBox="0 0 240.83 240.83" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(120.42 -49.88) rotate(45)"></rect>
-                                <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(-49.88 120.42) rotate(-45)"></rect></svg
-                            ><svg class="shape-2 d-none d-sm-block" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"></circle></svg>
-                            <div class="device-wrapper">
-                                <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
-                                    <div class="screen bg-black">
-                                        <div class="screenshot-carousel" id="heroCarousel">
-                                            <img src="assets/img/screenshots/light_01_home.png" alt="Home Dashboard" data-index="0" />
-                                            <img src="assets/img/screenshots/light_03_ledger.png" alt="Ledger &amp; Expenses" data-index="1" />
-                                            <img src="assets/img/screenshots/light_02_shopping.png" alt="Shared Shopping" data-index="2" />
-                                            <img src="assets/img/screenshots/light_05_chores_list.png" alt="Chores List" data-index="3" />
-                                            <img src="assets/img/screenshots/light_07_chore_details.png" alt="Chore Details" data-index="4" />
-                                            <img src="assets/img/screenshots/light_06_hall_of_fame.png" alt="Leaderboard Hall of Fame" data-index="5" />
-                                            <img src="assets/img/screenshots/light_08_hub.png" alt="The Hub" data-index="6" />
+                        <div class="col-lg-6">
+                            <!-- Masthead device mockup with screenshot carousel-->
+                            <div class="masthead-device-mockup">
+                                <svg class="circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="circleGradient" gradientTransform="rotate(45)">
+                                            <stop class="gradient-start-color" offset="0%"></stop>
+                                            <stop class="gradient-end-color" offset="100%"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="50" cy="50" r="50"></circle></svg
+                                ><svg class="shape-1 d-none d-sm-block" viewBox="0 0 240.83 240.83" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(120.42 -49.88) rotate(45)"></rect>
+                                    <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(-49.88 120.42) rotate(-45)"></rect></svg
+                                ><svg class="shape-2 d-none d-sm-block" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"></circle></svg>
+                                <div class="device-wrapper">
+                                    <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
+                                        <div class="screen bg-black">
+                                            <div class="screenshot-carousel" id="heroCarousel">
+                                                <img src="assets/img/screenshots/light_01_home.png" alt="Home Dashboard" data-index="0" />
+                                                <img src="assets/img/screenshots/light_03_ledger.png" alt="Ledger &amp; Expenses" data-index="1" />
+                                                <img src="assets/img/screenshots/light_02_shopping.png" alt="Shared Shopping" data-index="2" />
+                                                <img src="assets/img/screenshots/light_05_chores_list.png" alt="Chores List" data-index="3" />
+                                                <img src="assets/img/screenshots/light_07_chore_details.png" alt="Chore Details" data-index="4" />
+                                                <img src="assets/img/screenshots/light_06_hall_of_fame.png" alt="Leaderboard Hall of Fame" data-index="5" />
+                                                <img src="assets/img/screenshots/light_08_hub.png" alt="The Hub" data-index="6" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -178,101 +196,101 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </header>
-        <!-- Quote/testimonial aside-->
-        <aside class="text-center bg-gradient-primary-to-secondary">
-            <div class="container px-5">
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-xl-8">
-                        <div class="h2 fs-1 text-white mb-4">"Finally, an app that makes living with roommates feel effortless. No more spreadsheets, no more awkward money conversations."</div>
-                        <div class="text-white-50 font-alt">Arbor AI Studio</div>
+            </header>
+            <!-- Quote/testimonial aside-->
+            <aside class="text-center bg-gradient-primary-to-secondary">
+                <div class="container px-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-xl-8">
+                            <div class="h2 fs-1 text-white mb-4">"Finally, an app that makes living with roommates feel effortless. No more spreadsheets, no more awkward money conversations."</div>
+                            <div class="text-white-50 font-alt">Arbor AI Studio</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </aside>
-        <!-- Answer-first summary section-->
-        <section class="bg-white" id="summary">
-            <div class="container px-5">
-                <div class="row justify-content-center text-center">
-                    <div class="col-lg-9">
-                        <p class="text-muted small mb-3">Last updated July 8, 2026</p>
-                        <h2 class="display-5 lh-1 mb-4">What is Manor?</h2>
-                        <p class="lead text-muted mb-0">Manor is a shared living app for households that need one source of truth for expenses, chores, shopping, and everyday coordination. It is not a banking app, payment processor, property management system, or landlord portal; it focuses on the recurring logistics of living together.</p>
+            </aside>
+            <!-- Answer-first summary section-->
+            <section class="bg-white" id="summary">
+                <div class="container px-5">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-lg-9">
+                            <p class="text-muted small mb-3">Last updated July 8, 2026</p>
+                            <h2 class="display-5 lh-1 mb-4">What is Manor?</h2>
+                            <p class="lead text-muted mb-0">Manor is a shared living app for households that need one source of truth for expenses, chores, shopping, and everyday coordination. It is not a banking app, payment processor, property management system, or landlord portal; it focuses on the recurring logistics of living together.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- App features section-->
-        <section class="bg-light" id="features">
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-lg-8 order-lg-1 mb-5 mb-lg-0">
-                        <div class="container-fluid px-0">
-                            <div class="row gx-4">
-                                <div class="col-md-6">
-                                    <!-- Feature item: Ledger-->
-                                    <div class="feature-card">
-                                        <div class="icon-feature-grid"><i class="bi-calculator"></i></div>
-                                        <h3>Smart Ledger</h3>
-                                        <p>Track every shared expense. Manor automatically calculates who owes whom — settle up with a single tap. No more spreadsheets or awkward money conversations.</p>
+            </section>
+            <!-- App features section-->
+            <section class="bg-light" id="features">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-8 order-lg-1 mb-5 mb-lg-0">
+                            <div class="container-fluid px-0">
+                                <div class="row gx-4">
+                                    <div class="col-md-6">
+                                        <!-- Feature item: Ledger-->
+                                        <div class="feature-card">
+                                            <div class="icon-feature-grid"><i class="bi-calculator"></i></div>
+                                            <h3>Smart Ledger</h3>
+                                            <p>Track every shared expense. Manor automatically calculates who owes whom — settle up with a single tap. No more spreadsheets or awkward money conversations.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <!-- Feature item: Chores-->
+                                        <div class="feature-card">
+                                            <div class="icon-feature-grid"><i class="bi-check2-square"></i></div>
+                                            <h3>Chore Management</h3>
+                                            <p>Assign tasks, set deadlines, earn points. Renegotiate deadlines and points directly in-app. No more nagging — just tap and done.</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <!-- Feature item: Chores-->
-                                    <div class="feature-card">
-                                        <div class="icon-feature-grid"><i class="bi-check2-square"></i></div>
-                                        <h3>Chore Management</h3>
-                                        <p>Assign tasks, set deadlines, earn points. Renegotiate deadlines and points directly in-app. No more nagging — just tap and done.</p>
+                                <div class="row gx-4">
+                                    <div class="col-md-6 mb-4 mb-md-0">
+                                        <!-- Feature item: Shopping-->
+                                        <div class="feature-card">
+                                            <div class="icon-feature-grid"><i class="bi-cart3"></i></div>
+                                            <h3>Shared Shopping List</h3>
+                                            <p>Real-time synced list for your household. Buy an item and instantly split its cost into the Ledger. Never buy double milk again.</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row gx-4">
-                                <div class="col-md-6 mb-4 mb-md-0">
-                                    <!-- Feature item: Shopping-->
-                                    <div class="feature-card">
-                                        <div class="icon-feature-grid"><i class="bi-cart3"></i></div>
-                                        <h3>Shared Shopping List</h3>
-                                        <p>Real-time synced list for your household. Buy an item and instantly split its cost into the Ledger. Never buy double milk again.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <!-- Feature item: Themes & Notifications-->
-                                    <div class="feature-card">
-                                        <div class="icon-feature-grid"><i class="bi-palette"></i></div>
-                                        <h3>Light & Dark Themes</h3>
-                                        <p>Beautiful in both light and dark modes. Push notifications keep everyone in sync with chore reminders and updates.</p>
+                                    <div class="col-md-6">
+                                        <!-- Feature item: Themes & Notifications-->
+                                        <div class="feature-card">
+                                            <div class="icon-feature-grid"><i class="bi-palette"></i></div>
+                                            <h3>Light & Dark Themes</h3>
+                                            <p>Beautiful in both light and dark modes. Push notifications keep everyone in sync with chore reminders and updates.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 order-lg-0">
-                        <!-- Features section device mockup-->
-                        <div class="features-device-mockup">
-                            <svg class="circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="circleGradient" gradientTransform="rotate(45)">
-                                        <stop class="gradient-start-color" offset="0%"></stop>
-                                        <stop class="gradient-end-color" offset="100%"></stop>
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="50" cy="50" r="50"></circle></svg
-                            ><svg class="shape-1 d-none d-sm-block" viewBox="0 0 240.83 240.83" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(120.42 -49.88) rotate(45)"></rect>
-                                <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(-49.88 120.42) rotate(-45)"></rect></svg
-                            ><svg class="shape-2 d-none d-sm-block" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"></circle></svg>
-                            <div class="device-wrapper">
-                                <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
-                                    <div class="screen bg-black">
-                                        <div class="screenshot-carousel" id="featuresCarousel">
-                                            <img src="assets/img/screenshots/dark_01_home.png" alt="Dark Home Dashboard" data-index="0" />
-                                            <img src="assets/img/screenshots/dark_03_ledger.png" alt="Dark Ledger" data-index="1" />
-                                            <img src="assets/img/screenshots/dark_02_shopping.png" alt="Dark Shopping" data-index="2" />
-                                            <img src="assets/img/screenshots/dark_05_chores_list.png" alt="Dark Chores List" data-index="3" />
-                                            <img src="assets/img/screenshots/dark_07_chore_details.png" alt="Dark Chore Details" data-index="4" />
-                                            <img src="assets/img/screenshots/dark_06_hall_of_fame.png" alt="Dark Leaderboard Hall of Fame" data-index="5" />
-                                            <img src="assets/img/screenshots/dark_08_hub.png" alt="Dark The Hub" data-index="6" />
+                        <div class="col-lg-4 order-lg-0">
+                            <!-- Features section device mockup-->
+                            <div class="features-device-mockup">
+                                <svg class="circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="circleGradient" gradientTransform="rotate(45)">
+                                            <stop class="gradient-start-color" offset="0%"></stop>
+                                            <stop class="gradient-end-color" offset="100%"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="50" cy="50" r="50"></circle></svg
+                                ><svg class="shape-1 d-none d-sm-block" viewBox="0 0 240.83 240.83" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(120.42 -49.88) rotate(45)"></rect>
+                                    <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(-49.88 120.42) rotate(-45)"></rect></svg
+                                ><svg class="shape-2 d-none d-sm-block" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"></circle></svg>
+                                <div class="device-wrapper">
+                                    <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
+                                        <div class="screen bg-black">
+                                            <div class="screenshot-carousel" id="featuresCarousel">
+                                                <img src="assets/img/screenshots/dark_01_home.png" alt="Dark Home Dashboard" data-index="0" />
+                                                <img src="assets/img/screenshots/dark_03_ledger.png" alt="Dark Ledger" data-index="1" />
+                                                <img src="assets/img/screenshots/dark_02_shopping.png" alt="Dark Shopping" data-index="2" />
+                                                <img src="assets/img/screenshots/dark_05_chores_list.png" alt="Dark Chores List" data-index="3" />
+                                                <img src="assets/img/screenshots/dark_07_chore_details.png" alt="Dark Chore Details" data-index="4" />
+                                                <img src="assets/img/screenshots/dark_06_hall_of_fame.png" alt="Dark Leaderboard Hall of Fame" data-index="5" />
+                                                <img src="assets/img/screenshots/dark_08_hub.png" alt="Dark The Hub" data-index="6" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -280,37 +298,37 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- About section-->
-        <section class="bg-white" id="about">
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
-                    <div class="col-12 col-lg-5">
-                        <h2 class="display-4 lh-1 mb-4">Why Manor?</h2>
-                        <p class="lead fw-normal text-muted mb-5 mb-lg-0">Living with others is great — managing the logistics isn't. Manor replaces the chaos of group chats, physical whiteboards, and scattered payment requests with a single, elegant source of truth. No more guessing who paid for what. No more nagging about chores. Just smooth, effortless cohabitation.</p>
-                    </div>
-                    <div class="col-sm-8 col-md-6">
-                        <div class="about-device-mockup">
-                            <svg class="circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="circleGradient" gradientTransform="rotate(45)">
-                                        <stop class="gradient-start-color" offset="0%"></stop>
-                                        <stop class="gradient-end-color" offset="100%"></stop>
-                                    </linearGradient>
-                                </defs>
-                                <circle cx="50" cy="50" r="50"></circle></svg
-                            ><svg class="shape-1 d-none d-sm-block" viewBox="0 0 240.83 240.83" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(120.42 -49.88) rotate(45)"></rect>
-                                <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(-49.88 120.42) rotate(-45)"></rect></svg
-                            ><svg class="shape-2 d-none d-sm-block" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"></circle></svg>
-                            <div class="device-wrapper">
-                                <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
-                                    <div class="screen bg-black">
-                                        <div class="screenshot-carousel" id="aboutCarousel">
-                                            <img src="assets/img/screenshots/dark_01_home.png" alt="Dark Home" data-index="0" />
-                                            <img src="assets/img/screenshots/dark_03_ledger.png" alt="Dark Ledger" data-index="1" />
-                                            <img src="assets/img/screenshots/dark_05_chores_list.png" alt="Dark Chores" data-index="2" />
+            </section>
+            <!-- About section-->
+            <section class="bg-white" id="about">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+                        <div class="col-12 col-lg-5">
+                            <h2 class="display-4 lh-1 mb-4">Why Manor?</h2>
+                            <p class="lead fw-normal text-muted mb-5 mb-lg-0">Living with others is great — managing the logistics isn't. Manor replaces the chaos of group chats, physical whiteboards, and scattered payment requests with a single, elegant source of truth. No more guessing who paid for what. No more nagging about chores. Just smooth, effortless cohabitation.</p>
+                        </div>
+                        <div class="col-sm-8 col-md-6">
+                            <div class="about-device-mockup">
+                                <svg class="circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="circleGradient" gradientTransform="rotate(45)">
+                                            <stop class="gradient-start-color" offset="0%"></stop>
+                                            <stop class="gradient-end-color" offset="100%"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="50" cy="50" r="50"></circle></svg
+                                ><svg class="shape-1 d-none d-sm-block" viewBox="0 0 240.83 240.83" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(120.42 -49.88) rotate(45)"></rect>
+                                    <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(-49.88 120.42) rotate(-45)"></rect></svg
+                                ><svg class="shape-2 d-none d-sm-block" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"></circle></svg>
+                                <div class="device-wrapper">
+                                    <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
+                                        <div class="screen bg-black">
+                                            <div class="screenshot-carousel" id="aboutCarousel">
+                                                <img src="assets/img/screenshots/dark_01_home.png" alt="Dark Home" data-index="0" />
+                                                <img src="assets/img/screenshots/dark_03_ledger.png" alt="Dark Ledger" data-index="1" />
+                                                <img src="assets/img/screenshots/dark_05_chores_list.png" alt="Dark Chores" data-index="2" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -318,171 +336,171 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- Comparison section-->
-        <section class="bg-white" id="comparison">
-            <div class="container px-5">
-                <div class="row justify-content-center text-center mb-5">
-                    <div class="col-lg-8">
-                        <h2 class="display-5 lh-1 mb-3">Manor vs. spreadsheets, whiteboards, and group chats</h2>
-                        <p class="lead text-muted mb-0">Manor replaces scattered household tools with structured, synced workflows for recurring shared living tasks.</p>
+            </section>
+            <!-- Comparison section-->
+            <section class="bg-white" id="comparison">
+                <div class="container px-5">
+                    <div class="row justify-content-center text-center mb-5">
+                        <div class="col-lg-8">
+                            <h2 class="display-5 lh-1 mb-3">Manor vs. spreadsheets, whiteboards, and group chats</h2>
+                            <p class="lead text-muted mb-0">Manor replaces scattered household tools with structured, synced workflows for recurring shared living tasks.</p>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered align-middle bg-white">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col">Household need</th>
+                                    <th scope="col">Manor</th>
+                                    <th scope="col">Spreadsheet or whiteboard</th>
+                                    <th scope="col">Group chat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Shared expenses</th>
+                                    <td>Smart ledger calculates who owes whom after shared purchases.</td>
+                                    <td>Spreadsheets and payment requests must be updated by hand.</td>
+                                    <td>Costs get buried in messages and are easy to miss.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Chore accountability</th>
+                                    <td>Assignments, deadlines, and points live in the household app.</td>
+                                    <td>Whiteboards and chore wheels go stale unless someone maintains them.</td>
+                                    <td>Reminders turn into repeated nagging across the chat.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Shopping coordination</th>
+                                    <td>Real-time list syncs household items and can flow into the ledger.</td>
+                                    <td>Paper notes do not update when someone is already at the store.</td>
+                                    <td>Duplicate purchases happen when messages are missed.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Best fit</th>
+                                    <td>Roommates, couples, families, and shared homes that want one source of truth.</td>
+                                    <td>Very small households with rare shared purchases.</td>
+                                    <td>Quick one-off coordination, not long-term household management.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="table-responsive">
-                    <table class="table table-bordered align-middle bg-white">
-                        <thead class="table-light">
-                            <tr>
-                                <th scope="col">Household need</th>
-                                <th scope="col">Manor</th>
-                                <th scope="col">Spreadsheet or whiteboard</th>
-                                <th scope="col">Group chat</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">Shared expenses</th>
-                                <td>Smart ledger calculates who owes whom after shared purchases.</td>
-                                <td>Spreadsheets and payment requests must be updated by hand.</td>
-                                <td>Costs get buried in messages and are easy to miss.</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Chore accountability</th>
-                                <td>Assignments, deadlines, and points live in the household app.</td>
-                                <td>Whiteboards and chore wheels go stale unless someone maintains them.</td>
-                                <td>Reminders turn into repeated nagging across the chat.</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Shopping coordination</th>
-                                <td>Real-time list syncs household items and can flow into the ledger.</td>
-                                <td>Paper notes do not update when someone is already at the store.</td>
-                                <td>Duplicate purchases happen when messages are missed.</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Best fit</th>
-                                <td>Roommates, couples, families, and shared homes that want one source of truth.</td>
-                                <td>Very small households with rare shared purchases.</td>
-                                <td>Quick one-off coordination, not long-term household management.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-        <!-- How it works section-->
-        <section class="bg-light" id="how-it-works">
-            <div class="container px-5">
-                <div class="row justify-content-center text-center mb-5">
-                    <div class="col-lg-8">
-                        <h2 class="display-5 lh-1 mb-3">How Manor works</h2>
-                        <p class="lead text-muted mb-0">Set up a household, add shared responsibilities, and keep the home in sync without maintaining spreadsheets or repeating reminders.</p>
-                    </div>
-                </div>
-                <div class="row gx-4 gy-4">
-                    <div class="col-md-4">
-                        <div class="feature-card h-100">
-                            <div class="icon-feature-grid"><span class="fw-bold">1</span></div>
-                            <h3>Create or join a household</h3>
-                            <p>Invite roommates, a partner, family members, or housemates into one shared Manor household.</p>
+            </section>
+            <!-- How it works section-->
+            <section class="bg-light" id="how-it-works">
+                <div class="container px-5">
+                    <div class="row justify-content-center text-center mb-5">
+                        <div class="col-lg-8">
+                            <h2 class="display-5 lh-1 mb-3">How Manor works</h2>
+                            <p class="lead text-muted mb-0">Set up a household, add shared responsibilities, and keep the home in sync without maintaining spreadsheets or repeating reminders.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="feature-card h-100">
-                            <div class="icon-feature-grid"><span class="fw-bold">2</span></div>
-                            <h3>Track everyday responsibilities</h3>
-                            <p>Add shared expenses, assign chores with deadlines and points, and keep a real-time shopping list.</p>
+                    <div class="row gx-4 gy-4">
+                        <div class="col-md-4">
+                            <div class="feature-card h-100">
+                                <div class="icon-feature-grid"><span class="fw-bold">1</span></div>
+                                <h3>Create or join a household</h3>
+                                <p>Invite roommates, a partner, family members, or housemates into one shared Manor household.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="feature-card h-100">
-                            <div class="icon-feature-grid"><span class="fw-bold">3</span></div>
-                            <h3>Keep everyone in sync</h3>
-                            <p>Use reminders, household updates, and the ledger to reduce repeated group chat messages and manual follow-up.</p>
+                        <div class="col-md-4">
+                            <div class="feature-card h-100">
+                                <div class="icon-feature-grid"><span class="fw-bold">2</span></div>
+                                <h3>Track everyday responsibilities</h3>
+                                <p>Add shared expenses, assign chores with deadlines and points, and keep a real-time shopping list.</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- AI and search friendly FAQ section-->
-        <section class="bg-light" id="faq">
-            <div class="container px-5">
-                <div class="row justify-content-center text-center mb-5">
-                    <div class="col-lg-8">
-                        <h2 class="display-5 lh-1 mb-3">Shared Living App FAQ</h2>
-                        <p class="lead text-muted mb-0">Clear answers about Manor for households comparing roommate expense trackers, chore apps, and shared shopping list apps.</p>
-                    </div>
-                </div>
-                <div class="row gx-4 gy-4">
-                    <div class="col-md-6">
-                        <div class="feature-card h-100">
-                            <h3>What is Manor?</h3>
-                            <p>Manor is a mobile app for shared living. It helps households coordinate shared expenses, chores, shopping lists, and household updates from one place.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="feature-card h-100">
-                            <h3>Who is Manor for?</h3>
-                            <p>Manor is built for roommates, couples, families, and other shared households that need a clearer way to manage everyday responsibilities together.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="feature-card h-100">
-                            <h3>What household tasks can Manor manage?</h3>
-                            <p>Manor manages shared expenses through a ledger, assigns chores with deadlines and points, keeps a real-time shopping list, and gives each household a shared hub for updates.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="feature-card h-100">
-                            <h3>How does Manor help with roommate expenses?</h3>
-                            <p>Manor records shared purchases, calculates who owes whom, and makes settling up easier without spreadsheets, scattered payment requests, or repeated group chat reminders.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="feature-card h-100">
-                            <h3>Is Manor available on iOS and Android?</h3>
-                            <p>Manor is available for Android through Google Play and for iOS through TestFlight while the app is in early access.</p>
+                        <div class="col-md-4">
+                            <div class="feature-card h-100">
+                                <div class="icon-feature-grid"><span class="fw-bold">3</span></div>
+                                <h3>Keep everyone in sync</h3>
+                                <p>Use reminders, household updates, and the ledger to reduce repeated group chat messages and manual follow-up.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- Call to action section-->
-        <section class="cta">
-            <div class="cta-content">
-                <div class="container px-5 text-center">
-                    <h2 class="text-white display-1 lh-1 mb-4">
-                        Ready to make
-                        <br />
-                        shared living effortless?
-                    </h2>
-                    <p class="text-white-50 lead mb-5">Join our community. Share ideas, report bugs, or just say hi.</p>
-                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-                        <a class="btn btn-outline-light py-3 px-4 rounded-pill" href="https://discord.gg/J4cp3aukYS" target="_blank">
-                            <i class="bi-discord me-2"></i>
-                            Discord
-                        </a>
-                        <a class="btn btn-outline-light py-3 px-4 rounded-pill" href="https://www.reddit.com/r/manorApp/" target="_blank">
-                            <i class="bi-reddit me-2"></i>
-                            Reddit
-                        </a>
-                        <a class="btn btn-outline-light py-3 px-4 rounded-pill" href="https://github.com/arboraistudio/manor-home/discussions" target="_blank">
-                            <i class="bi-github me-2"></i>
-                            GitHub
-                        </a>
+            </section>
+            <!-- AI and search friendly FAQ section-->
+            <section class="bg-light" id="faq">
+                <div class="container px-5">
+                    <div class="row justify-content-center text-center mb-5">
+                        <div class="col-lg-8">
+                            <h2 class="display-5 lh-1 mb-3">Shared Living App FAQ</h2>
+                            <p class="lead text-muted mb-0">Clear answers about Manor for households comparing roommate expense trackers, chore apps, and shared shopping list apps.</p>
+                        </div>
+                    </div>
+                    <div class="row gx-4 gy-4">
+                        <div class="col-md-6">
+                            <div class="feature-card h-100">
+                                <h3>What is Manor?</h3>
+                                <p>Manor is a mobile app for shared living. It helps households coordinate shared expenses, chores, shopping lists, and household updates from one place.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-card h-100">
+                                <h3>Who is Manor for?</h3>
+                                <p>Manor is built for roommates, couples, families, and other shared households that need a clearer way to manage everyday responsibilities together.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-card h-100">
+                                <h3>What household tasks can Manor manage?</h3>
+                                <p>Manor manages shared expenses through a ledger, assigns chores with deadlines and points, keeps a real-time shopping list, and gives each household a shared hub for updates.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-card h-100">
+                                <h3>How does Manor help with roommate expenses?</h3>
+                                <p>Manor records shared purchases, calculates who owes whom, and makes settling up easier without spreadsheets, scattered payment requests, or repeated group chat reminders.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-card h-100">
+                                <h3>Is Manor available on iOS and Android?</h3>
+                                <p>Manor is available for Android through Google Play and for iOS through TestFlight while the app is in early access.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- App badge section-->
-        <section class="bg-gradient-primary-to-secondary" id="download">
-            <div class="container px-5">
-                <h2 class="text-center text-white font-alt mb-4">Get Manor Today</h2>
-                <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center">
-                    <a class="me-lg-3 mb-4 mb-lg-0" href="https://play.google.com/store/apps/details?id=com.arboraistudio.manor.staging" target="_blank" rel="noopener"><img class="app-badge" src="assets/img/google-play-badge.svg" alt="Get it on Google Play" /></a>
-                    <a href="https://testflight.apple.com/join/fvXp8SEC" target="_blank" rel="noopener"><img class="app-badge" src="assets/img/app-store-badge.svg" alt="Download on the App Store" /></a>
+            </section>
+            <!-- Call to action section-->
+            <section class="cta">
+                <div class="cta-content">
+                    <div class="container px-5 text-center">
+                        <h2 class="text-white display-1 lh-1 mb-4">
+                            Ready to make
+                            <br />
+                            shared living effortless?
+                        </h2>
+                        <p class="text-white-50 lead mb-5">Join our community. Share ideas, report bugs, or just say hi.</p>
+                        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                            <a class="btn btn-outline-light py-3 px-4 rounded-pill" href="https://discord.gg/J4cp3aukYS" target="_blank">
+                                <i class="bi-discord me-2"></i>
+                                Discord
+                            </a>
+                            <a class="btn btn-outline-light py-3 px-4 rounded-pill" href="https://www.reddit.com/r/manorApp/" target="_blank">
+                                <i class="bi-reddit me-2"></i>
+                                Reddit
+                            </a>
+                            <a class="btn btn-outline-light py-3 px-4 rounded-pill" href="https://github.com/arboraistudio/manor-home/discussions" target="_blank">
+                                <i class="bi-github me-2"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <!-- App badge section-->
+            <section class="bg-gradient-primary-to-secondary" id="download">
+                <div class="container px-5">
+                    <h2 class="text-center text-white font-alt mb-4">Get Manor Today</h2>
+                    <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center">
+                        <a class="me-lg-3 mb-4 mb-lg-0" href="https://play.google.com/store/apps/details?id=com.arboraistudio.manor.staging" target="_blank" rel="noopener"><img class="app-badge" src="assets/img/google-play-badge.svg" alt="Get it on Google Play" /></a>
+                        <a href="https://testflight.apple.com/join/fvXp8SEC" target="_blank" rel="noopener"><img class="app-badge" src="assets/img/app-store-badge.svg" alt="Download on the App Store" /></a>
+                    </div>
+                </div>
+            </section>
+        </main>
         <!-- Footer-->
         <footer class="bg-black text-center py-5">
             <div class="container px-5">
@@ -491,6 +509,8 @@
                     <a href="privacy/">Privacy Policy</a>
                     <span class="mx-1">&middot;</span>
                     <a href="manor.md">Product Facts</a>
+                    <span class="mx-1">&middot;</span>
+                    <a href="llms.txt">AI Context</a>
                     <span class="mx-1">&middot;</span>
                     <a href="https://github.com/arboraistudio/manor-home" target="_blank">GitHub</a>
                     <span class="mx-1">&middot;</span>

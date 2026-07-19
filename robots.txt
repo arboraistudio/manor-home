@@ -1,28 +1,65 @@
-User-agent: *
-Allow: /
+# ===========================================
+# robots.txt — AI-era configuration
+# https://manor.arboraistudio.com
+# ===========================================
 
+# --- Traditional search crawlers (allow) ---
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+User-agent: Applebot
+Allow: /
+
+# --- AI search & research bots (allow) ---
+# These bots index pages for AI answers and drive citations and
+# referral traffic (ChatGPT Search, Perplexity, Claude, Meta AI).
 User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: PerplexityBot
+Allow: /
+
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: PerplexityBot
+User-agent: Meta-ExternalAgent
 Allow: /
 
 User-agent: GoogleOther
 Allow: /
 
+# --- AI training crawlers (allow) ---
+# This is a public marketing page. Inclusion in model training
+# increases Manor's visibility in LLM answers, so training use is
+# welcome here.
 User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# --- Pure scrapers (block) ---
+# These consume resources without sending traffic or citations.
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# --- Everything else ---
+User-agent: *
 Allow: /
 
 Sitemap: https://manor.arboraistudio.com/sitemap.xml
