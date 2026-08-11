@@ -9,6 +9,8 @@
 
 window.addEventListener('DOMContentLoaded', function () {
 
+    var androidDownloadLocation = 'General';
+
     // Activate Bootstrap scrollspy on the main nav element
     var mainNav = document.body.querySelector('#mainNav');
     if (mainNav) {
@@ -36,13 +38,77 @@ window.addEventListener('DOMContentLoaded', function () {
     initCarousel('featuresCarousel', 5000);
     initCarousel('aboutCarousel', 6000);
 
+    // Guide Android users through tester enrollment before Google Play.
+    var androidAccessModal = document.getElementById('androidAccessModal');
+    var androidJoinGroup = document.getElementById('androidJoinGroup');
+    var androidStepOne = document.querySelector('[data-android-step="1"]');
+    var androidStepTwo = document.querySelector('[data-android-step="2"]');
+    var androidStepLockedCopy = document.querySelector('.android-step-locked');
+    var androidPlayStoreLink = document.getElementById('androidPlayStoreLink');
+    var androidAccessStatus = document.getElementById('androidAccessStatus');
+
+    function hasOpenedAndroidTesterGroup() {
+        try {
+            return window.localStorage.getItem('manorAndroidTesterGroupOpened') === 'true';
+        } catch (error) {
+            return false;
+        }
+    }
+
+    function unlockAndroidDownload() {
+        if (!androidStepOne || !androidStepTwo || !androidPlayStoreLink) return;
+
+        androidStepOne.classList.remove('is-active');
+        androidStepOne.classList.add('is-complete');
+        androidStepTwo.classList.remove('is-locked');
+        androidStepTwo.classList.add('is-active');
+        androidPlayStoreLink.hidden = false;
+        if (androidStepLockedCopy) androidStepLockedCopy.hidden = true;
+        if (androidAccessStatus) {
+            androidAccessStatus.textContent = 'Step 1 complete. The Google Play link is now available in Step 2.';
+        }
+    }
+
+    if (hasOpenedAndroidTesterGroup()) {
+        unlockAndroidDownload();
+    }
+
+    if (androidAccessModal) {
+        androidAccessModal.addEventListener('show.bs.modal', function (event) {
+            var trigger = event.relatedTarget;
+            if (trigger && trigger.dataset.downloadLocation) {
+                androidDownloadLocation = trigger.dataset.downloadLocation;
+            }
+        });
+    }
+
+    if (androidJoinGroup) {
+        androidJoinGroup.addEventListener('click', function () {
+            try {
+                window.localStorage.setItem('manorAndroidTesterGroupOpened', 'true');
+            } catch (error) {
+                // The flow still works when storage is unavailable.
+            }
+            unlockAndroidDownload();
+
+            if (typeof gtag === 'function') {
+                gtag('event', 'join_android_testers', {
+                    'location': androidDownloadLocation,
+                    'link_url': androidJoinGroup.href
+                });
+            }
+        });
+    }
+
     // Track App Downloads in Google Analytics
     var downloadLinks = document.querySelectorAll('a[href*="play.google.com"], a[href*="testflight.apple.com"]');
     downloadLinks.forEach(function (link) {
         link.addEventListener('click', function () {
             var href = link.getAttribute('href');
             var platform = href.includes('play.google.com') ? 'Android' : 'iOS';
-            var location = link.closest('.masthead') ? 'Hero' : 'Footer';
+            var location = platform === 'Android'
+                ? androidDownloadLocation
+                : (link.closest('.masthead') ? 'Hero' : 'Download');
             
             if (typeof gtag === 'function') {
                 gtag('event', 'click_download', {
